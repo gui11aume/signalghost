@@ -1,0 +1,8 @@
+Package: signalghost
+Title: Generate Hierarchic Orderings by Serial Transpositions.
+Version: 0.1 
+Date: 2011-09-03
+Author: Guillaume Filion
+Maintainer: Guillaume Filion <guillaume.filion@gmail.com>
+Description: Provides resampling methods for auto-correlated signals using the GHOST (Generate Hierarchic Orderings by Serial Transpositions) protocol. 
+License: GPL (>=2)
