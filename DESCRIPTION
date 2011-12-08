@@ -6,4 +6,4 @@ Author: Guillaume Filion
 Maintainer: Guillaume Filion <guillaume.filion@gmail.com>
 Description: Provides resampling methods for auto-correlated signals using the GHOST (Generate Hierarchic Orderings by Serial Transpositions) protocol. 
 License: GPL (>=2)
-URL: https://github.com/g1illa1me/signalghost
+URL: https://github.com/gui11aume/signalghost
