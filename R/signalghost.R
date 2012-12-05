@@ -24,16 +24,24 @@ signalghost <- function(x, blocks, circular=FALSE, ...) {
     for (block in unique(blocks)) {
         indices <- which(blocks == block);
         n <- length(indices);
-        ghost  <- .ghostpermute(ceiling(log2(n)), ...);
+        N <- ceiling(log2(n))
+        ghost  <- .ghostpermute(N, ...);
         if (circular) {
             m <- sample.int(n=length(ghost), size=1);
             ghost <- c(ghost[m:length(ghost)], ghost)[1:length(ghost)];
         }
+        zero <- sample(1:2^N, size=2^N-n, replace=FALSE)
+        one <- rep(1, 2^N)
+        one[zero] <- 0
+        i <- cumsum(one)
+        i[zero] <- NA
+        i <- i[ghost]
+        i <- i[!is.na(i)]
         if (is.vector(x)) {
-            x[indices] <- x[indices[ghost[ghost <= n]]];
+            x[indices] <- x[indices[i]];
         }
         else {
-            x[indices,] <- x[indices[ghost[ghost <= n]],];
+            x[indices,] <- x[indices[i],];
         }
     }
 
